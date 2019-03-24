@@ -30,8 +30,6 @@ try:
                     logging.info(f"{i+1}/{row_count}: {','.join(row)}")
 
                     url = API_ENDPOINT.format(key=key, address=quote('+'.join(row)))
-                    logging.info(url)
-
                     response = urlopen(url)
                     data = json.loads(response.read())
 
