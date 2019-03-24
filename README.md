@@ -8,7 +8,7 @@ Geocoding is the process of converting addresses (like "1600 Amphitheatre Parkwa
 ## Requirements
 * **Python 3**: To run the script it is necessary to have installed any version of python 3. You can download the latest version [here](https://www.python.org/downloads).
 * **Google Maps Geocoding API key**: In order to obtain the coordinates, it is necessary to have an API key for a project that has Google Maps Geocoding API enabled. If you do not have one, you can get one [here](https://developers.google.com/maps/documentation/geocoding/get-api-key).
-* **CSV file with address list**: Each address must occupy a single row and can occupy more than one column. For example:
+* **CSV file with address list with UTF-8 encoding**: Each address must occupy a single row and can occupy more than one column. For example:
 
 <table>
 	<tr>

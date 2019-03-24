@@ -18,6 +18,7 @@ try:
         reader = csv.reader(input_file)
         rows = list(reader)
         row_count = len(rows)
+
         with open(f"output_{os.path.basename(input_file.name)}", 'w', newline='', encoding='utf-8') \
                 as output_file:
             writer = csv.writer(output_file)
