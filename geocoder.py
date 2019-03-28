@@ -8,7 +8,7 @@ from urllib.parse import quote
 from urllib.error import HTTPError
 
 logging.basicConfig(format='%(levelname)s: %(message)s', level=logging.INFO)
-API_ENDPOINT = 'https://maps.googleapis.com/maps/api/geocode/json?key={key}&address={address}'
+API_ENDPOINT = 'https://maps.googleapis.com/maps/api/geocode/json?key={key}&address={address}&language=es&region=es'
 
 try:
     path = sys.argv[1] if len(sys.argv) > 1 else input('Enter the path of the csv file: ')
@@ -29,12 +29,12 @@ try:
                 if len(row):
                     logging.info(f"{i+1}/{row_count}: {','.join(row)}")
 
-                    url = API_ENDPOINT.format(key=key, address=quote('+'.join(row)))
+                    url = API_ENDPOINT.format(key=key, address=quote(','.join(row)))
                     response = urlopen(url)
                     data = json.loads(response.read())
 
                     if data.get('results'):
-                        result = data['results'].pop(0)
+                        result = data['results'][0]
                         writer.writerow([','.join(row),
                                          format(result['geometry']['location']['lat'], '.7f'),
                                          format(result['geometry']['location']['lng'], '.7f'),
